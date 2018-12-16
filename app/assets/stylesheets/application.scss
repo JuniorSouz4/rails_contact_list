@@ -1,2 +1,42 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html,body {
+    font-size: 1rem;
+}
+footer {
+    margin-top: 40px;
+    background-color: #2b2a2a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    a {
+        color: white;
+        &:hover {
+            text-decoration: none;
+            color: #f5da63;
+        }
+    }
+    small {
+        display: flex;
+        justify-content: flex-start;
+    }
+    nav.nav-footer {
+        ul.list-sub {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            li {
+                margin-left: 20px;
+            }
+        }
+    }
+    
+}
