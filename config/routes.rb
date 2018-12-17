@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   root to: "static_pages#index"
 
   get 'sobre', to: 'static_pages#sobre'
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
   post 'entrar', to: 'sessions#create'
   delete 'sair', to: 'sessions#destroy'
   
-
   resources :contacts
   resources :users, only: [:new, :create, :show, :edit, :update]
 
