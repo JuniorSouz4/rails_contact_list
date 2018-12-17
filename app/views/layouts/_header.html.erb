@@ -1,25 +1,52 @@
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <%# <button class="navbar-toogle collapsed" type="button" data-toogle="collapse">
-                <span class="sr-only">Toogle navigation</span>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse">
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button> %>
+            </button>
             <%= link_to 'Contact List', root_url, class:'navbar-brand' %>
         </div>
 
         <div class="collapse navbar-collapse" id="expanded-menu">
             <ul class="nav navbar-nav">
+            <% if !user_signed_in? %>
                 <li class="active">
                     <%= link_to 'Nova Conta', new_user_path %>
                 </li>
+            <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <%= link_to 'Entrar', '#' %>
-                </li>
+                <% if !user_signed_in? %>
+                    <li>
+                        <%= link_to 'Entrar', entrar_path %>
+                    </li>
+                <% elsif user_signed_in? %>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Bem vindo, <%= current_user.name %> <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li>
+                                <%= link_to 'Minha Dados', current_user, class:'dropdown-item' %>
+                            </li>
+                            <li>
+                                <%= link_to 'Meus Contatos', contacts_path, class:'dropdown-item' %>
+                            </li>
+                            <li>
+                                <%= link_to 'Editar', '#', class:'dropdown-item' %>
+                            </li>
+                            <li class="divider" role="separator"></li>
+                            <li>
+                                <%= link_to 'Sair', sair_path , method: :delete , class:'dropdown-item'%>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                <% end %>
             </ul>
         </div>
     </div>
