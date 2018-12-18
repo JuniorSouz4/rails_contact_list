@@ -3,8 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Use Paperclip for upload images
+gem "paperclip", "~> 6.0.0"
+# Use Sass-Bootstrap for styles pages
 gem 'bootstrap-sass', '~> 3.4.0'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

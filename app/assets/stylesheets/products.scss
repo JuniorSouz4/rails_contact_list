@@ -1,0 +1,27 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.col-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.card {
+    // width: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+img.card-img-top {
+    width: 50px !important;
+    height: 75px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+}
+
+// .img-adesivo {
+//     width: 
+// }
