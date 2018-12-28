@@ -1,5 +1,13 @@
-<h1>Cadastrar Novo Produto</h1>
+<div class="row data-forms">
+    <div class="col-md-6 col-xs-12">
+        <h2>Adicionar Novo Produto</h2>
+    </div>
 
-<%= render 'form', product: @product %>
+    <div class="col-md-6 col-xs-12">
+        <%= form_for @product do |f| %>
+            <%= render 'form', product: @product %>
 
-<%= link_to 'Voltar', products_path %>
+            <%= link_to 'Voltar', products_path %>
+        <% end %>
+    </div>
+</div>
